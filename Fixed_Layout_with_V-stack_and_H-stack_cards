@@ -6,8 +6,8 @@ views:
     icon: mdi:view-grid
     type: panel
     badges:
-      - entity: person.peterdee
-      - entity: calendar.peterkawa
+      - entity: person.name
+      - entity: calendar.name
     cards:
       - type: vertical-stack
         cards:
@@ -21,7 +21,7 @@ views:
                         chips:
                           - type: back
                           - type: entity
-                            entity: person.peterdee
+                            entity: person.name
                           - type: weather
                             entity: weather.buienradar
                           - type: menu
