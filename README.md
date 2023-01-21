@@ -7,6 +7,8 @@ Home Assistant files
 
 ![Screenshot from 2023-01-21 16-15-28](https://user-images.githubusercontent.com/74005072/213874022-80d11553-37b4-41c5-997b-a1a4e96183ed.png)
 
+[]()
+[]()
 * Screenshots of dashboard '**layout_4-2-1_columns_dynamic**'
 For this, you'll need the https://github.com/thomasloven/lovelace-layout-card, installable via HACS 
 
