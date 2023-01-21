@@ -1,0 +1,311 @@
+title: layout_4cols_template
+views:
+  - theme: null
+    path: layout-4-colums_template
+    icon: mdi:monitor-dashboard
+    type: custom:grid-layout
+    layout:
+      grid-template-columns: 24% 25% 25% 24%
+      grid-template-rows: auto
+      grid-template-areas: |
+        "header header header header"
+        "messagesl messagesml messagesmr messagesr"
+        "left1 midl1 midr1 right1"
+        "left2 midl2 midr2 right2"
+        "left3 midl3 midr3 right3"
+        "left4 midl4 midr4 right4"
+        "footer footer footer footer"
+      mediaquery:
+        '(max-width: 801px)':
+          grid-template-columns: 100%
+          grid-template-areas: |
+            "header"
+            "messagesl"
+            "messagesml"
+            "messagesmr"
+            "messagesr"
+            "left1"
+            "midl1"
+            "midr1"
+            "right1"
+            "left2"
+            "midl2"
+            "midr2"
+            "right2"
+            "left3"
+            "midl3"
+            "midr3"
+            "right3"
+            "left4"
+            "midl4"
+            "midr4"
+            "right4"
+            "footer"
+        '(max-width: 1201px)':
+          grid-template-columns: 50% 50%
+          grid-template-areas: |
+            "header header"
+            "messagesl messagesml"
+            "messagesmr messagesr"
+            "left1 midl1"
+            "midr1 right1"
+            "left2 midl2"
+            "midr2 right2"
+            "left3 midl3"
+            "midr3 right3"
+            "left4 midl4"
+            "midr4 right4"
+            "footer footer"
+    badges: []
+    cards:
+      - square: false
+        columns: 2
+        type: grid
+        cards:
+          - type: custom:mushroom-chips-card
+            chips:
+              - type: back
+              - type: menu
+              - type: entity
+                entity: person.peterdee
+                use_entity_picture: true
+              - type: entity
+                entity: switch.thuis_turned_on
+                icon: mdi:home-account
+                use_entity_picture: true
+              - type: weather
+                entity: weather.buienradar
+                show_temperature: true
+                show_conditions: true
+              - type: entity
+                entity: sensor.time_date
+              - type: entity
+                entity: switch.thuis_turned_on
+                name: header
+                icon: mdi:monitor-dashboard
+                content_info: name
+          - type: custom:timer-bar-card
+            name: header - Timer 24u
+            entity: timer.24_uur
+        view_layout:
+          grid-area: header
+      - type: entity-filter
+        state_filter:
+          - operator: <
+            value: 75
+        entities:
+          - sensor.memoryfree
+          - entity: sensor.homeysystemload_5min
+            state_filter:
+              - operator: '>'
+                value: 150
+        card:
+          type: entities
+          title: messagesl
+        view_layout:
+          grid-area: messagesl
+      - type: vertical-stack
+        cards:
+          - type: vertical-stack
+            cards: []
+          - type: area
+            name: messagesml
+            area: buiten
+            navigation_path: /lovelace-kamer/outside
+            show_camera: true
+        view_layout:
+          grid-area: messagesml
+      - type: vertical-stack
+        cards:
+          - type: custom:auto-entities
+            filter:
+              include:
+                - entity_id: sensor.*batt*
+                  state: < 95
+              exclude:
+                - entity_id: sensor.*.friendly_name
+                - entity_id: sensor.*_z*
+                - entity_id: sensor.sensor_ba*_bat*
+                - entity_id: sensor.sensor_ke*_bat*
+                - entity_id: sensor.sensor_eet*_bat*
+                - entity_id: sensor.sensor_be*_bat*
+                - entity_id: sensor.*health*
+                - entity_id: sensor.*state*
+                - entity_id: sensor.s9_peter_battery_temp*
+            card:
+              type: custom:flex-table-card
+              max_rows: 3
+              strict: true
+              clickable: true
+              title: messagesmr
+              css:
+                table+: 'border: 10;'
+              columns:
+                - name: ''
+                  data: name
+                  icon: mdi:battery-80
+                  suffix: ' ....'
+                  align: center
+                - name: (%)
+                  data: state
+                  fmt: number
+                  icon: ''
+                  align: right
+                  modify: parseFloat(x).toFixed(0)
+                - name: Updated
+                  data: last_updated
+                  suffix: ' u.'
+                  fmt: hours_passed
+            sort:
+              method: state
+              reverse: false
+              numeric: true
+        view_layout:
+          grid-area: messagesmr
+      - type: custom:auto-entities
+        card:
+          type: entities
+          title: messagesr
+          state_color: true
+        filter:
+          include:
+            - attributes:
+                day: Vandaag
+            - attributes:
+                day: Morgen
+          exclude: []
+        show_empty: true
+        view_layout:
+          grid-area: messagesr
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.time_date
+            name: left1
+        view_layout:
+          grid-area: left1
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.time_date
+            name: midl1
+        view_layout:
+          grid-area: midl1
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.time_date
+            name: midr2
+        view_layout:
+          grid-area: midr2
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.time_date
+            name: right1
+        view_layout:
+          grid-area: right1
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.time_date
+            name: left2
+        view_layout:
+          grid-area: left2
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.time_date
+            name: midl2
+        view_layout:
+          grid-area: midl2
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.time_date
+            name: midr1
+        view_layout:
+          grid-area: midr1
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.time_date
+            name: right2
+        view_layout:
+          grid-area: right2
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.time_date
+            name: left3
+        view_layout:
+          grid-area: left3
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.time_date
+            name: midl3
+        view_layout:
+          grid-area: midl3
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.time_date
+            name: midl4
+        view_layout:
+          grid-area: midl4
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.time_date
+            name: right3
+        view_layout:
+          grid-area: right3
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.time_date
+            name: left4
+        view_layout:
+          grid-area: left4
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.time_date
+            name: midr3
+        view_layout:
+          grid-area: midr3
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.time_date
+            name: midr4
+        view_layout:
+          grid-area: midr4
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.time_date
+            name: right4
+        view_layout:
+          grid-area: right4
+      - type: horizontal-stack
+        cards:
+          - type: markdown
+            content: Footer
+            theme: Google Dark Theme
+          - type: area
+            navigation_path: /lovelace-kamer/beneden-licht
+            theme: Google Dark Theme
+            area: woonkamer
+          - type: area
+            area: keuken
+            navigation_path: /lovelace-kamer/keuken
+          - type: area
+            area: boven
+            navigation_path: /lovelace-boven
+          - type: area
+            area: media
+            navigation_path: /lovelace-kamer/kamer
+        view_layout:
+          grid-area: footer
