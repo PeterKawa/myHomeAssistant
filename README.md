@@ -9,7 +9,7 @@ No extra's needed, standard HA cards.
 - - - 
 
 ## Screenshots of dashboard '**layout_4-2-1_columns_dynamic**'
-*For this, you'll need the* https://github.com/thomasloven/lovelace-layout-card* installable via HAC*
+*For this, you'll need the* https://github.com/thomasloven/lovelace-layout-card *installable via HAC*
 
 * * By default 4 columns are displayed:
 ![Screenshot from 2023-01-21 16-56-53](https://user-images.githubusercontent.com/74005072/213875721-96180fd2-32a1-4fc6-961d-efd5eb5c2221.png)
