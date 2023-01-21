@@ -9,6 +9,7 @@ Home Assistant files
 
 * Screenshots of dashboard 'layout_4-2-1_columns_dynamic'
 * * By default 4 columns are displayed:
-![Screenshot from 2023-01-21 16-56-53](https://user-images.githubusercontent.com/74005072/213875281-03e11817-d862-4fac-9db8-79ae1d0da000.png)
+![Screenshot from 2023-01-21 16-56-53](https://user-images.githubusercontent.com/74005072/213875721-96180fd2-32a1-4fc6-961d-efd5eb5c2221.png)
+
 * * Smaller screen, automatic displaying of 2 columns:
-![Screenshot 2023-01-21 at 16-57-34 layout_4cols_template – Home Assistant](https://user-images.githubusercontent.com/74005072/213875333-1c3eae65-2973-480a-87ea-5d347b42c864.png)
+![Screenshot 2023-01-21 at 16-57-34 layout_4cols_template – Home Assistant](https://user-images.githubusercontent.com/74005072/213875706-470aa533-477d-4d65-82af-9037091d23f5.png)
