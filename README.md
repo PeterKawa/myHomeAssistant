@@ -8,7 +8,7 @@ No extra's needed, standard HA cards.
 
 - - - 
 
-## Screenshots of dashboard '**layout_4-2-1_columns_dynamic**'
+## Screenshots of dashboard '**[layout_4-2-1_columns_dynamic](https://github.com/PeterKawa/myHomeAssistant/blob/main/layout_4-2-1_columns_dynamic)**'
 *For this, you'll need the* https://github.com/thomasloven/lovelace-layout-card *installable via HAC*
 
 * * By default 4 columns are displayed:
