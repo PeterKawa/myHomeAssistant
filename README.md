@@ -6,6 +6,7 @@ No extra's needed, standard HA cards.
 
 ![Screenshot from 2023-01-21 16-15-28](https://user-images.githubusercontent.com/74005072/213874022-80d11553-37b4-41c5-997b-a1a4e96183ed.png)
 
+.
 - - - 
 
 ## Screenshots of dashboard '**[layout_4-2-1_columns_dynamic](https://github.com/PeterKawa/myHomeAssistant/blob/main/layout_4-2-1_columns_dynamic)**'
@@ -19,3 +20,6 @@ No extra's needed, standard HA cards.
 
 * * Mobile screen, display all in 1 column:
 ![Screenshot 2023-01-21 at 17-12-03 layout_4cols_template – Home Assistant](https://user-images.githubusercontent.com/74005072/213876050-9d98f966-2f3f-407b-b334-51156b466afc.png)
+
+.
+- - -
