@@ -1,0 +1,74 @@
+title: Fixed Layout with Vertical- and Horizontal-stack cards
+views:
+  - theme: Backend-selected
+    title: Layout GridVertHorz cards
+    path: layout-gridverthorz-cards
+    icon: mdi:view-grid
+    type: panel
+    badges:
+      - entity: person.peterdee
+      - entity: calendar.peterkawa
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - type: vertical-stack
+                    cards:
+                      - type: custom:mushroom-chips-card
+                        chips:
+                          - type: back
+                          - type: entity
+                            entity: person.peterdee
+                          - type: weather
+                            entity: weather.buienradar
+                          - type: menu
+                          - type: light
+                            entity: light.lampen_b_g
+                            use_light_color: true
+                        alignment: center
+                      - type: horizontal-stack
+                        cards:
+                          - type: markdown
+                            content: |2
+                                Header.L
+                          - type: markdown
+                            content: '  Header'
+                          - type: markdown
+                            content: |
+                              Header.R
+              - square: false
+                columns: 3
+                type: grid
+                cards:
+                  - type: entity
+                    entity: sensor.time
+                    name: VHG.L
+                    state_color: true
+                  - type: entity
+                    entity: sensor.time
+                    name: VHG
+                    state_color: true
+                  - type: entity
+                    entity: sensor.time
+                    name: VHG.L
+                    state_color: true
+                  - type: entity
+                    entity: sensor.time
+                    name: VHG.L2
+                    state_color: true
+                  - type: entity
+                    entity: sensor.time
+                    name: VHG2
+                    state_color: true
+                  - type: entity
+                    entity: sensor.time
+                    name: VHG.R2
+                    state_color: true
+              - type: markdown
+                content: |-
+                  Footer
+                  - - -
+                  More Footer
